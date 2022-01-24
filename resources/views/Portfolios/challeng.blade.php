@@ -18,45 +18,148 @@
     <a href=" {{route('home.index')}}">voltar</a>
                 <h1>Desafios do projeto</h1>
                 <p>
-                    __Vou tentar resumir um pouco os desafios deste projeto porque foi o primeiro,que contruir com
-                    laravel,docker,laradock
-                    esperiência fantástica com docker,sem precisar, ter nada instalado na minha maquina,laradock
-                    então
-                    sem palavras já
-                    traz muita configuração pré setada como vários banco de dados versão do php, inginx e outros,
-                    servidores no caso;apesar da facilidade
-                    por ser primeira vez eu demorei um pouco para conseguir setar tudo corretamente no .env do laradock
-                    tem
-                    expecificar a porta que vai
-                    rodar cada container, servidor, banco de dados,phpmyadmin,já pode dizer o nome do database que vai
-                    ser
-                    criado na hora que rodar as migrate,
-                    e também tem o .env do laravel;
-                    Quando é criado um projeto do laravel ele já vem umas migrates por padrão, essas migrates são para
-                    altenticação do laravel tela de registro e login
-                    que foi a que euusei nesse projeto para autenticação do usuario;<br>
-                    __O sistema M V C do Laravel Model, View, Controller, deixa o codico bem enxuto,colocando toda
-                    logica no
-                    controller,e Model referência a migrate
-                    e o comando php artisanque neste caso é executado dentro do container do laradock,facilita muito
-                    a
-                    vida do desenvolvedor,
-                    php artisan make: é posivel criar model,controller,diretórios,classes e umainfinadades de coisa
-                    dando produtividade ,
-                    o desafio maior fica por conta dos comandos a serem executados ex: uma view não carregou o erro era
-                    permissão negada levei dois dias para descobrir
-                    que tinha que dar o camando chmod -R 777 storage e tudo certo, outra coisa é quando muda alguma
-                    configuração no AdminLTE por exemplo tem digitar
-                    php artisan config:cache para pegar essas atualizacoẽs en cache,acostumar com interpolarização do
-                    blade
-                    no caso de uma rota por exemplo {{}} e dentro route('nome da rota')
-                    se eu colocar o exemplo correto o route dentro das chaves o laravel me retorna um erro de rota
-                    inexistente rs,e por falar em erros o laravel traz uma sintásse de erros bem intuitiva,
-                    mostrando arqivo e até a linha que está o erro;<br>
-                    __Banco de dados foi um desafio a parte até que setar o banco no .env e subir o container dele foi a
-                    parte mais fácil,o poblema começa quando tem que fazer uma busca no banco 
-                    de dados,porque olaravel trabalha com o orm eloquente que até facilita bastante mas no meu caso que
-                    estava começando,para montar as quares foi difícil confeço.
+                    __Olá tudo bem com vocês,vou mensionar aqui minha opinião sobre esse framwork incrivel que é o Laravel,e essa foi a primeira vez,  Que eu tive contato com esse framwork,
+                   assisti alguns tuturiais no youtube,sobre rotas, class,views,blade,e sistema M V C do Laravel que,   ajuda muito divide as reponsabilidades M de models, V views, C Controller, 
+                   as views é a parte visual que o suário vai interagir,Controller fica regra de negocios onde fica todos metados declarados nas Roatas chamando o Controller expecífico,e os Models 
+                   são referenciados com as migrates e também se define no model quais campos da tabela poden ser preenchidos ex:   protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ]; assim você define que compo name, email, passoword poden ser preenchido,uma proteção de segurança do Laravel,mais uma medida de segurança é o token que é gerado pelo Laravel
+    atrávéz da diretiva '@-csrf' que tem que ser acrecentado no form para que ele saibá que realmente a requisição esta partindo daquele determinado form,mensionei sobre as migrates a cima, então elas facilitão principalmente 
+    se tiver trabalhando com equipe porque sempre que alguén de sua equipe rodar as migrates vai saber exatamente o que o outro da equipe mudou, mas as migrates não é exclusiva do Laravel , no Laravel são criadas com comando php artisan
+     make:migrate "nome da migrate" ou  php artisan make:model "nome do model" -m já vai criar o model e migrate jutos, o Models vai ser criado dentro de app/Models,e a migrate vai ser criada database/migrations,quando você começa um projeto Laravel
+     ele cria toda essa strutura para voçê todas as pastas separadas e pasta public é a pasta web accessible,que siginifica que é a pasta que vai estar publica acessivel a web:<br>
+     __Sobre esse comando php artisan que serve para rodar as migrate criar diretorios,class,Controllers,Models e muito mais coisas no meu caso ele é excultado dentro no workspace do laradock,
+     ,dentro do container que esta rodando o workspace do laradock no caso depois de subir os containers eu dou sudo docker exec -it laradock_workspace_1 bash e pronto ele dar algo assim root@e4d0f1efb3cb:/var/www# ,e aqui dentro posso execultar php artisan,
+     com esse comando ele já te mostra toda lista de comando que ele posui:Available commands:
+  clear-compiled        Remove the compiled class file
+  completion            Dump the shell completion script
+  db                    Start a new database CLI session
+  down                  Put the application into maintenance / demo mode
+  env                   Display the current framework environment
+  help                  Display help for a command
+  inspire               Display an inspiring quote
+  list                  List commands
+  migrate               Run the database migrations
+  optimize              Cache the framework bootstrap files
+  serve                 Serve the application on the PHP development server
+  test                  Run the application tests
+  tinker                Interact with your application
+  up                    Bring the application out of maintenance mode
+ adminlte
+  adminlte:install      Install all the required files for AdminLTE, and additional resources
+  adminlte:plugins      Manages the installation and removal of additional AdminLTE plugins
+  adminlte:status       Checks the installation status of the AdminLTE resources
+  adminlte:update       Update all the required assets for AdminLTE
+ auth
+  auth:clear-resets     Flush expired password reset tokens
+ cache
+  cache:clear           Flush the application cache
+  cache:forget          Remove an item from the cache
+  cache:table           Create a migration for the cache database table
+ config
+  config:cache          Create a cache file for faster configuration loading
+  config:clear          Remove the configuration cache file
+ db
+  db:seed               Seed the database with records
+  db:wipe               Drop all tables, views, and types
+ event
+  event:cache           Discover and cache the application's events and listeners
+  event:clear           Clear all cached events and listeners
+  event:generate        Generate the missing events and listeners based on registration
+  event:list            List the application's events and listeners
+ key
+  key:generate          Set the application key
+ make
+  make:cast             Create a new custom Eloquent cast class
+  make:channel          Create a new channel class
+  make:command          Create a new Artisan command
+  make:component        Create a new view component class
+  make:controller       Create a new controller class
+  make:event            Create a new event class
+  make:exception        Create a new custom exception class
+  make:factory          Create a new model factory
+  make:job              Create a new job class
+  make:listener         Create a new event listener class
+  make:mail             Create a new email class
+  make:middleware       Create a new middleware class
+  make:migration        Create a new migration file
+  make:model            Create a new Eloquent model class
+  make:notification     Create a new notification class
+  make:observer         Create a new observer class
+  make:policy           Create a new policy class
+  make:provider         Create a new service provider class
+  make:request          Create a new form request class
+  make:resource         Create a new resource
+  make:rule             Create a new validation rule
+  make:seeder           Create a new seeder class
+  make:test             Create a new test class
+ migrate
+  migrate:fresh         Drop all tables and re-run all migrations
+  migrate:install       Create the migration repository
+  migrate:refresh       Reset and re-run all migrations
+  migrate:reset         Rollback all database migrations
+  migrate:rollback      Rollback the last database migration
+  migrate:status        Show the status of each migration
+ model
+  model:prune           Prune models that are no longer needed
+ notifications
+  notifications:table   Create a migration for the notifications table
+ optimize
+  optimize:clear        Remove the cached bootstrap files
+ package
+  package:discover      Rebuild the cached package manifest
+ queue
+  queue:batches-table   Create a migration for the batches database table
+  queue:clear           Delete all of the jobs from the specified queue
+  queue:failed          List all of the failed queue jobs
+  queue:failed-table    Create a migration for the failed queue jobs database table
+  queue:flush           Flush all of the failed queue jobs
+  queue:forget          Delete a failed queue job
+  queue:listen          Listen to a given queue
+  queue:monitor         Monitor the size of the specified queues
+  queue:prune-batches   Prune stale entries from the batches database
+  queue:prune-failed    Prune stale entries from the failed jobs table
+  queue:restart         Restart queue worker daemons after their current job
+  queue:retry           Retry a failed queue job
+  queue:retry-batch     Retry the failed jobs for a batch
+  queue:table           Create a migration for the queue jobs database table
+  queue:work            Start processing jobs on the queue as a daemon
+ route
+  route:cache           Create a route cache file for faster route registration
+  route:clear           Remove the route cache file
+  route:list            List all registered routes
+ sail
+  sail:install          Install Laravel Sail's default Docker Compose file
+  sail:publish          Publish the Laravel Sail Docker files
+ schedule
+  schedule:clear-cache  Delete the cached mutex files created by scheduler
+  schedule:list         List the scheduled commands
+  schedule:run          Run the scheduled commands
+  schedule:test         Run a scheduled command
+  schedule:work         Start the schedule worker
+ schema
+  schema:dump           Dump the given database schema
+ session
+  session:table         Create a migration for the session database table
+ storage
+  storage:link          Create the symbolic links configured for the application
+ stub
+  stub:publish          Publish all stubs that are available for customization
+ vendor
+  vendor:publish        Publish any publishable assets from vendor packages
+ view
+  view:cache            Compile all of the application's Blade templates
+  view:clear            Clear all compiled view files
+root@e4d0f1efb3cb:/var/www# ;<br>
+__Vamos falar agora sobre laradock,ferramenta ecencial para trabalhar com docker
+
+
+   
+
+
+     
 
                 </p>
             

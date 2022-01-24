@@ -55,6 +55,12 @@
                 </div>
             </div>
             <div class="row mb-3">
+                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-sm ">whatsap:</label>
+                <div class="col-sm-10">
+                    <input type="tex" class="form-control form-control-sm " value="035998464219">
+                </div>
+            </div>
+            <div class="row mb-3">
                 <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-sm ">Estado:</label>
                 <div class="col-sm-10">
                     <input type="tex" class="form-control form-control-sm " value="Minas Gerais">
@@ -106,7 +112,14 @@
                 <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-sm">Frameworks:</label>
                 <div class="col-sm-10">
                     <input type="tex" class="form-control form-control-sm "
-                        value="laravel ,bootstrap,AdminLTE,docker,laradock,docker,composer">
+                        value="laravel ,bootstrap,AdminLTE,">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-sm">Gerênciador de dependencia:</label>
+                <div class="col-sm-10">
+                    <input type="tex" class="form-control form-control-sm "
+                        value="Composer,">
                 </div>
             </div>
         </header>
