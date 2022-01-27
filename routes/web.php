@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Route::get('/user',[PortfolioController::class, 'user'])->name('user.create');
 Route::get('/challeng',[PortfolioController::class, 'challeng'])->name('challeng.index');
 Route::get('/profile',[PortfolioController::class, 'create'])->name('create.profile');
 Route::get('/home' , [PortfolioController::class, 'index'])->name('home.index');

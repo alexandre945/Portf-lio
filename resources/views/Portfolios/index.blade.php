@@ -46,7 +46,8 @@
             <div class="img-fluid">
                 <img src="vendor/adminlte/dist/img/fines.png">
             </div>
-            <p>
+   
+            <p style= "margin-top:10px">
                 __Este projeto é mais um em vue.js assisti uma vide-aula no youtub e me entusiamei com vue,
                 eu achava que iria ser front-end, até começar a presisar do back em projetos pessoais,como este
                 era para ser um ecomecer,mais ou manos consegui fazer o front mas isso foi no inicio do
@@ -62,14 +63,20 @@
             <div class="img-fluid">
                 <img src="vendor/adminlte/dist/img/xandy.png">
             </div>
+            <div class="tex" style= "margin-top: 10px">
             <p>
            __  Progamação é algo que eu relmente quero fazer,desde que fiz aparecer primeiro hello world na tela eu 
            pesei isso éo que eu quero fazer de verdade,só não sabia que ia ser tão dificíl aprender sozinho,o intusiasmo
            foi maior que a razão ainda bem,os desafios são muitos os motivos para desistir são maiores ainda,a unica coisa 
-           que me faz persistir é vontade de virar progamador e criar algo que vá impactar na vida de outra pessoa positivamente
+           que me faz persistir é vontade de virar progamador e criar algo que vai impactar na vida de outra pessoa positivamente,
+           para isso é preciso muita dedicação, estudo,praticar muito mais muito mesmo;<br>
+           __O principal poblema é não saber para onde ir,demora um poco para você começar a entender todo processo,
+           
            
 
             </p>
+                </div>
+    
         </div>
 
     </div>

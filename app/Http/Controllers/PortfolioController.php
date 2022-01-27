@@ -15,6 +15,10 @@ class PortfolioController extends Controller
     {
         return view('Portfolios.index');
     }
+    public function user()
+     {
+         return view('Portfolios.user');
+     }
 
     /**
      * Show the form for creating a new resource.
