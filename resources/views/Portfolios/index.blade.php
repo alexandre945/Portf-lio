@@ -47,7 +47,7 @@
                 <img src="vendor/adminlte/dist/img/fines.png">
             </div>
             <p>
-                __Este projeto é mais um em vue.js assisti uns vide-aula no youtub e me entusiamei com vue,
+                __Este projeto é mais um em vue.js assisti uma vide-aula no youtub e me entusiamei com vue,
                 eu achava que iria ser front-end, até começar a presisar do back em projetos pessoais,como este
                 era para ser um ecomecer,mais ou manos consegui fazer o front mas isso foi no inicio do
                 aprendizado,estou mostrando aqui a evolução
@@ -63,14 +63,12 @@
                 <img src="vendor/adminlte/dist/img/xandy.png">
             </div>
             <p>
-                __Este projeto é mais um em vue.js assisti uns vide-aula no youtub e me entusiamei com vue,
-                eu achava que iria ser front-end, até começar a presisar do back em projetos pessoais,como este
-                era para ser um ecomecer,mais ou manos consegui fazer o front mas isso foi no inicio do
-                aprendizado,estou mostrando aqui a evolução
-                espero que estes projetos não sejam mau vistos por possivis recrutadores que possam estar anaizando
-                este portfólio eu assim espero,este tamben fiz deploy na vercel.<br>
+           __  Progamação é algo que eu relmente quero fazer,desde que fiz aparecer primeiro hello world na tela eu 
+           pesei isso éo que eu quero fazer de verdade,só não sabia que ia ser tão dificíl aprender sozinho,o intusiasmo
+           foi maior que a razão ainda bem,os desafios são muitos os motivos para desistir são maiores ainda,a unica coisa 
+           que me faz persistir é vontade de virar progamador e criar algo que vá impactar na vida de outra pessoa positivamente
+           
 
-                <a href="https://loja-virtual-delta.vercel.app" target="blank">Link do projeto</a>
             </p>
         </div>
 
