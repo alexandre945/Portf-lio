@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/store',[PortfolioController::class,'store'])->name('store.message');
+Route::get('/message',[PortfolioController::class,'message'])->name('message.index');
 Route::get('/user',[PortfolioController::class, 'user'])->name('user.create');
 Route::get('/challeng',[PortfolioController::class, 'challeng'])->name('challeng.index');
 Route::get('/profile',[PortfolioController::class, 'create'])->name('create.profile');

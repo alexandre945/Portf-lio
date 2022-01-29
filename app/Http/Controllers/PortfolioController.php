@@ -1,16 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+
+use App\Models\PortifolioModel;
 
 class PortfolioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+ 
+//    private $data;
+
+//    public function __construct()
+//    {
+//        $this->data=new PortifolioModel();
+//    }
+
+
+
     public function index()
     {
         return view('Portfolios.index');
@@ -35,58 +42,42 @@ class PortfolioController extends Controller
     {
         return view('Portfolios.challeng');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function message()
     {
-        //
+        return view('user.message');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+ 
+    public function store(Request $request)
+    {
+        
+      PortifolioModel::create([
+          'name' => $request->name,
+          'subject'=> $request->subject,
+          'assessment'=> $request->assessment,
+        
+      ]);
+      dd('aqui');
+    //    dd(PortifolioModel());
+    }
+
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //

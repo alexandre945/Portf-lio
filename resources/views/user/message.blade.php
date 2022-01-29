@@ -12,19 +12,27 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 jumbutron mx auto">
-            <form action="{{ route('#')}}" method= "POST">
+            <form action="{{ route('store.message')}}" method= "POST">
                 @csrf
+
                 <form-group>
                     <h2>Envie sua mensagem</h2>
                 </form-group>
                 <div class="form-group">
                     <label for="name">Nome</label>
-                    <input type="text" class="form-control" placeholder="seu nome">
-
+                    <input type="text"  class="form-control" placeholder="seu nome">
                 </div>
+                <div class="form-group">
+                    <label for="subjct">Assunto</label>
+                    <input type="text" class="form-control" placeholder="digite seu assunto">
+                </div>
+                <div class="form-group">
+                <label for="assessment">Digite sua mensagen</label>
+                <textarea class="form-control"  rows="7"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
 
-
-
+              
             </form>
 
         </div>
