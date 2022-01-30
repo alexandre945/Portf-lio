@@ -3,28 +3,30 @@
 namespace App\Http\Controllers;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\UserRequest;
 use App\Models\PortifolioModel;
 
 class PortfolioController extends Controller
 {
  
-//    private $data;
+   private $data;
 
-//    public function __construct()
-//    {
-//        $this->data=new PortifolioModel();
-//    }
+   public function  __construct()
+   {
+       $this->data = new PortifolioModel();
+   }
 
 
 
     public function index()
     {
+       
         return view('Portfolios.index');
     }
     public function user()
      {
-         return view('Portfolios.user');
+         $data = $this->data->all();
+         return view('Portfolios.user', compact('data'));
      }
 
     /**
@@ -44,21 +46,23 @@ class PortfolioController extends Controller
     }
     public function message()
     {
-        return view('user.message');
+        $data = $this->data->all();
+        return view('user.message', compact('data'));
     }
 
  
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        
-      PortifolioModel::create([
-          'name' => $request->name,
-          'subject'=> $request->subject,
-          'assessment'=> $request->assessment,
-        
-      ]);
-      dd('aqui');
-    //    dd(PortifolioModel());
+     $data=[
+         'name'=>$request->name,
+         'subject'=>$request->subject,
+         'assessment'=>$request->assessment,
+     ];
+     PortifolioModel::create($data);
+
+     return redirect()->route('user.create');
+   
+    
     }
 
     public function show($id)
@@ -78,8 +82,10 @@ class PortfolioController extends Controller
         //
     }
 
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $data = $this->data->find($id);
+        $data->delete($data);
+        return redirect()->route('user.create');
     }
 }

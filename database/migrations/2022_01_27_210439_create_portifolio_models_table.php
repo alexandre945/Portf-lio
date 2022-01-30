@@ -17,7 +17,7 @@ class CreatePortifolioModelsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('subject');
-            $table->string('assessment');
+            $table->text('assessment');
             $table->timestamps();
         });
     }

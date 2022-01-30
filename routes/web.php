@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+Route::delete('/delete/{id}',[PortfolioController::class, 'destroy'])->name('message.delete');
 Route::post('/store',[PortfolioController::class,'store'])->name('store.message');
 Route::get('/message',[PortfolioController::class,'message'])->name('message.index');
 Route::get('/user',[PortfolioController::class, 'user'])->name('user.create');

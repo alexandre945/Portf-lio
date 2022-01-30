@@ -12,6 +12,17 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 jumbutron mx auto">
+             @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                    <li>{{ $error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+             @endif
+          
+
             <form action="{{ route('store.message')}}" method= "POST">
                 @csrf
 
@@ -20,15 +31,15 @@
                 </form-group>
                 <div class="form-group">
                     <label for="name">Nome</label>
-                    <input type="text"  class="form-control" placeholder="seu nome">
+                    <input type="text" name="name" class="form-control" placeholder="seu nome">
                 </div>
                 <div class="form-group">
                     <label for="subjct">Assunto</label>
-                    <input type="text" class="form-control" placeholder="digite seu assunto">
+                    <input type="text" name="subject" class="form-control" placeholder="digite seu assunto">
                 </div>
                 <div class="form-group">
                 <label for="assessment">Digite sua mensagen</label>
-                <textarea class="form-control"  rows="7"></textarea>
+                <textarea class="form-control"name="assessment"  rows="7"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Enviar</button>
 
