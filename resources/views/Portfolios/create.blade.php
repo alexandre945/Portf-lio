@@ -69,7 +69,7 @@
             <div class="row mb-3">
                 <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-sm ">Cidade:</label>
                 <div class="col-sm-10">
-                    <input type="tex" class="form-control form-control-sm" value="Jesuãnia">
+                    <input type="tex" class="form-control form-control-sm" value="Jesuânia">
                 </div>
             </div>
 
