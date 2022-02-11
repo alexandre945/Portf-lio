@@ -84,8 +84,6 @@ class PortfolioController extends Controller
 
     public function destroy(Request $request, $id)
     {
-       
-        
         $data = $this->data->find($id);
         $data->delete($data);
         return redirect()->route('user.create');
