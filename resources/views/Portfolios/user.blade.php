@@ -36,41 +36,41 @@
                             <form action="{{ route('message.delete',$datas->id)}}" method="post">
                                 @method('DELETE')
                                 @csrf
-                                <button id="excluir" class="btn btn-danger" onclick="preventDefault()"> Excluir </button>
-                                   
-                               
+                                <button type="button" class="btn btn-danger"   data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal{{$datas->id}}">
+                                    Excluir
+                                </button>
                             </form>
-                            <a href="#"><button id="update" class="btn btn-success"> Edit</button></a>
+                            <button id="update" class="btn btn-success"> Edit</button>
+                            <form action="{{route('message.delete',$datas->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <div class="modal fade" id="exampleModal{{$datas->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header,btn btn-danger">
+                                                <h5 class="modal-title" id="exampleModalLabel">COMFIRMAÇÃO</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Deseja excluir este intem?</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">cancelar</button>
+                                                <button type="submit" class="btn btn-danger">Excluir</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
                         </div>
                     </td>
                 </tr>
                 @endforeach
-            </tb    ody>
+                </tbody>
         </table>
     </div>
-    <form action="{{route('message.delete',$datas->id) }}" method="post">
-        @csrf
-        @method('DELETE')
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header,btn btn-danger">
-                        <h5 class="modal-title" id="exampleModalLabel">COMFIRMAÇÃO</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Deseja excluir este intem?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">cancelar</button>
-                        <button type="submit" class="btn btn-danger">Excluir</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </form>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
